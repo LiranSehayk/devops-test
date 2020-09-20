@@ -1,7 +1,7 @@
 node {
     stage('Example') {
         echo "This is my scripted Pipeline"
-        sh "docker ps"
-	sh "kubectl get all -n uveye"
+        bat "docker ps"
+        bat "kubectl get all -n uveye"
     }
 }
