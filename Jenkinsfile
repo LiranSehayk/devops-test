@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World from GitHub'
+                echo 'Trigger from Github is working.'
             }
         }
     }
