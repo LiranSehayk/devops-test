@@ -14,6 +14,7 @@ node {
                 customImage.push()
                 }
             }
+            echo "Build succeeded"
         } catch (e) {
             echo "${e}"
             echo "Build failed"
