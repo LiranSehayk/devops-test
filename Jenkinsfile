@@ -12,8 +12,9 @@ node {
             customImage.push()
             }
             
-            withCredentials([usernamePassword(credentialsId: 'dockerhub-liransehayk', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                echo 'cf login some.awesome.url -u ${USERNAME} -p $PASSWORD'
+            withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: dockerhub-liransehayk, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) { 
+                echo "Username: ${USERNAME}"
+    
             }
         } catch (e) {
             echo "Build failed"
