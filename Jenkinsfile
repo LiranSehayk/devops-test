@@ -15,7 +15,7 @@ node {
                 
                 customImage.push('latest')
                 
-                docker service update --image ${REGISTRY}:${BUILD_NUMBER} ${SERVICE_NAME}
+                bat 'docker service update --image ${REGISTRY}:${BUILD_NUMBER} ${SERVICE_NAME}'
                 }
             }
             echo "Build succeeded"
