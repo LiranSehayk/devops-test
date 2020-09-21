@@ -7,7 +7,7 @@ node {
 
         echo "Deploying ${BUILD_NUMBER} to a new Docker Image"
         docker.withRegistry("",'dockerhub-liransehayk') {
-        def customImage = docker.build("my-nginx:${build_number}", ".")
+        def customImage = docker.build("my-nginx", ".")
         customImage.push()
         }
     }
