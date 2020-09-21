@@ -17,6 +17,7 @@ node {
     
             }
         } catch (e) {
+            echo "${e}"
             echo "Build failed"
         } finally {
             cleanWs()
