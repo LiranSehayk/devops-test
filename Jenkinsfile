@@ -4,8 +4,8 @@ node {
         echo "This is my scripted Pipeline"
         
         withCredentials([usernamePassword(credentialsId: 'dockerhub-liransehayk', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            echo "This is the USERNAME: ${DOCKER-USERNAME}"
-            echo "This is the build number: ${BUILD_NUMBER}"
+            sh 'echo "This is the USERNAME: $USERNAME"'
+            sh 'echo "This is the build number: ${BUILD_NUMBER}"'
         }
         
         def buildRegistry = [ url: 'https://hub.docker.com/', credentialsId: 'dockerhub-liransehayk' ]
