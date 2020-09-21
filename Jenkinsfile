@@ -7,14 +7,13 @@ node {
 
         echo "Deploying ${BUILD_NUMBER} to a new Docker Image"
         docker.withRegistry("",'dockerhub-liransehayk') {
-        def customImage = docker.build("liransehayk/my-nginx", ".")
+        def customImage = docker.build("liransehayk/my-nginx:${BUILD_NUMBER}", ".")
         customImage.push()
         }
     }
-    post {
-        always {
-            cleanWs()
-        }
+    
+    stage('cleanWs') {
+        cleanWs()
     }
-}
 
+}
