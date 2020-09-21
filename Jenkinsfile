@@ -1,8 +1,9 @@
 node {
-    stage('Example') {
+
+    stage('Build') {
         echo "This is my scripted Pipeline"
-        bat "docker ps"
-        bat "whoami"
-        bat "kubectl get all -n uveye"
+        docker.withRegistry('https://www.dockerhub.com', 'dockerhub-liransehayk') {
+          docker.build('my-nginx').push(${BUILD_NUMBER})
+        }
     }
 }
