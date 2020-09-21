@@ -11,5 +11,10 @@ node {
         customImage.push()
         }
     }
+    post {
+        always {
+            cleanWs()
+        }
+    }
 }
 
