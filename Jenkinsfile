@@ -9,7 +9,7 @@ node {
         docker.withRegistry("https://hub.docker.com/",'dockerhub-liransehayk') {
         def customImage = docker.build("my-nginx:${build_number}", ".")
         customImage.push()
-
+        }
     }
 }
 
