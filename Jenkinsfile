@@ -12,6 +12,8 @@ node {
                 docker.withRegistry("",'dockerhub-liransehayk') {
                 def customImage = docker.build("${REGISTRY}:${BUILD_NUMBER}", ".")
                 customImage.push()
+                
+                customImage.push('latest')
                 }
             }
             echo "Build succeeded"
