@@ -12,8 +12,12 @@ node {
             customImage.push()
             }
             
-            withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: dockerhub-liransehayk, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) { 
-                echo "Username: ${USERNAME}"
+            withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub-liransehayk',
+                                usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+                bat '''
+                    echo %USERNAME%
+                    '''
+            }
     
             }
         } catch (e) {
